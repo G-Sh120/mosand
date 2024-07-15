@@ -1,0 +1,141 @@
+*{
+   margin: 0; /* عشان نرجعها للاصل من دون اي باندق او مرجن*/
+   padding: 0; 
+}
+
+body{
+    background:linear-gradient(#200016,#10001f); /*color combing */
+    height: 100vh; /* اخلي اللون يناسب الشاشه */
+    font-family: system-ui
+}
+a{
+    text-decoration: none; /* remove line */
+    color: white;
+}
+
+header{
+    position: fixed; /*  */
+    width: 95%;
+    z-index: 100; /*عشان اخلي الهيدر فوق كل شي*/
+    display: flex;
+    justify-content: space-between; /* to make content a way from logo */
+    align-items: center; /* make logo down a littl */ 
+    margin: 30px;
+}
+header .logo{
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+}
+header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none; /* to remove black dots */
+}
+header ul li{
+    margin-right: 30px;
+}
+header ul li a{
+    padding: 6px 15px ;
+
+}
+header ul li a:hover{
+    background:white ;
+    color: #200016;
+    border-radius: 10px;   
+}
+
+.main{
+    position: relative; /* تخلي ابعاد الصور متناسقه مع ابعاد السكشن */
+    height: 100vh;
+    width: 100%;
+
+    /*to make mosand text in center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+}
+.main::after{
+    content:'';
+    position: absolute; /*to control this after*/
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(to top ,#200016,transparent); /*ادمج اللون مع فراغ من تحت*/
+}
+.main img {
+    position: absolute; /* عشان اخليهم يتحركون بناء على الاب الي هو الموقع فوق عند المين */
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; 
+}
+#moon{
+    transform: translateY(80px); /*تنزل القمر شوي تخليه ع النص*/
+    mix-blend-mode: screen; /* to remove black circle around moon */
+}
+.mosand{
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    transform: translateY(-140px);
+}
+.content{
+    color: white;
+    padding: 30px;
+}
+.content h2{
+    margin: 20px;
+    font-size: 30px;
+   
+}
+.content p{
+    margin: 20px;
+}
+
+/*    for cards      */
+
+.container{
+    
+    padding:15px 9%;
+    padding-bottom: 100px;
+}
+
+.container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap:15px;
+}
+
+.container .box-container .box{
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    border-radius: 20px;
+    background: white;
+    text-align: center;
+    padding:30px 20px;
+}
+
+.container .box-container .box img{
+    height: 150px;
+}
+
+.container .box-container .box h3{
+    color:#444;
+    font-size: 22px;
+    padding:10px 0;
+}
+
+.container .box-container .box p{
+    color:#000000;
+    font-size: 20px;
+    line-height: 1.8;
+    font-family: 'Franklin Gothic Medium'
+}
+
+.container .box-container .box:hover{
+    box-shadow: 0 10px 15px rgba(0,0,0,.3);
+    transform: scale(1.03);
+}
